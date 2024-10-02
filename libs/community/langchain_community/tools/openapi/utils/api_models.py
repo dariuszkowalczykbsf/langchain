@@ -160,9 +160,9 @@ class APIProperty(APIPropertyBase):
         schema_type: SCHEMA_TYPE = APIProperty._cast_schema_list_type(schema)
         if schema_type == "array":
             schema_type = APIProperty._get_schema_type_for_array(schema)
-        elif schema_type == "object":
+        # elif schema_type == "object":
             # TODO: Resolve array and object types to components.
-            raise NotImplementedError("Objects not yet supported")
+            # raise NotImplementedError("Objects not yet supported")
         elif schema_type in PRIMITIVE_TYPES:
             if schema.enum:
                 schema_type = APIProperty._get_schema_type_for_enum(parameter, schema)
